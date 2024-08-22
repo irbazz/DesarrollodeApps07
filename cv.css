@@ -3,6 +3,7 @@ body {
 }
 
 header {
+    margin-top: 5%;
     text-align: center;
 }
 
@@ -17,8 +18,17 @@ hr {
 
 article {
     margin-left: 20%;   
+    margin-right: 20%;
 }
 
 .tabla {
     text-align: left;
+}
+
+.icono {
+    padding: auto;
+    margin: auto;
+    height: 80px;
+    position: absolute;
+    transform: translate(200px,0px);
 }
