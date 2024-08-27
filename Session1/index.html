@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiencia de Clase</title>
+    <style>
+        /* Estilos para el formulario */
+        form {
+            margin: 20px auto;
+            width: 400px;
+            padding: 1em;
+            border: 1px solid #CCC;
+            border-radius: 1em;
+            background-color: #f9f9f9;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        form li + li {
+            margin-top: 1em;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+        }
+        input, textarea {
+            font: 1em sans-serif;
+            width: 220px;
+            box-sizing: border-box;
+            border: 1px solid #999;
+        }
+        input:focus, textarea:focus {
+            border-color: #000;
+        }
+        textarea {
+            vertical-align: top;
+            height: 5em;
+        }
+        button {
+            margin-left: 154px; /* Para alinear con el texto del formulario */
+            padding: 0.5em 1em;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 0.3em;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para la tabla */
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        /* Estilo para el grupo de columnas */
+        colgroup col:first-child {
+            background-color: rgb(251, 251, 251);
+        }
+    </style>
+</head>
+<body>
+    <h1>Experiencia de Clase</h1>
+    <h1><a href="https://plantillashtmlgratis.com/" title="Plantillas" target="_blank">Plantillas HTML</a></h1>
+
+    <!-- Formulario -->
+    <form action="/my-handling-form-page" method="post">
+        <ul>
+            <li>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+            </li>
+            <li>
+                <label for="mail">Correo electrónico:</label>
+                <input type="email" id="mail" name="user_mail">
+            </li>
+            <li>
+                <label for="msg">Mensaje:</label>
+                <textarea id="msg" name="user_message"></textarea>
+            </li>
+        </ul> 
+        <button type="submit">Enviar</button>
+    </form>
+
+    <!-- Tabla -->
+    <h2>Tabla de Datos</h2>
+    <table>
+        <colgroup>
+            <col>
+            <col style="background-color: rgb(255, 255, 255)">
+        </colgroup>
+        <tr>
+            <th>Dato 1</th>
+            <th>Dato 2</th>
+        </tr>
+        <tr>
+            <td> primera celda.</td>
+            <td> segunda celda.</td>
+        </tr>
+        <tr>
+            <td>tercera celda.</td>
+            <td>cuarta celda.</td>
+        </tr>
+        <tr>
+            <td>Segunda fila, primera celda.</td>
+            <td>Celda 2.</td>
+        </tr>
+        <tr>
+            <td>Calcuta</td>
+            <td>Pizza</td>
+        </tr>
+        <tr>
+            <td>Robots</td>
+            <td>Jazz</td>
+        </tr>
+    </table>
+
+</body>
+</html>
