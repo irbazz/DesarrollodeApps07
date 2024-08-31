@@ -1,0 +1,19 @@
+/* Selectores de atributos */
+a[href] {
+    color: rgb(9, 193, 9);
+    text-decoration: underline;
+}
+
+a[target="_blank"] {
+    color: rgb(0, 0, 0);
+}
+
+input[placeholder] {
+    background-color: lightgray;
+    border: 1px solid #000;
+}
+
+input[type="password"] {
+    background-color: lightyellow;
+    border: 2px solid rgb(42, 42, 42);
+}

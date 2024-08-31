@@ -1,0 +1,15 @@
+/* Configuración de colores usando HLS (d) */
+/* 1. Fondo de un div en HLS */
+div.fondo-hls {
+    background-color: hsl(0, 100%, 50%); /* Rojo */
+}
+
+/* 2. Texto de un párrafo en HLS */
+p.texto-hls {
+    color: hsl(240, 100%, 50%); /* Azul */
+}
+
+/* 3. Bordes de un contenedor en HLS */
+div.borde-hls {
+    border: 2px solid hsl(120, 100%, 51%); /* Verde oscuro */
+}

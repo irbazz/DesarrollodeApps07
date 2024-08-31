@@ -1,0 +1,49 @@
+/* Reglas para los selectores por ID */
+#titulo {
+    color: blue;
+    font-size: 2.5em;
+}
+
+#subtitulo {
+    color: darkred;
+    font-family: 'Courier New', monospace;
+}
+
+#parrafo1 {
+    color: #444;
+    background-color: rgb(149, 255, 149);
+    padding: 15px;
+}
+
+#parrafo2 {
+    color: #666;
+    background-color: lavender;
+    font-weight: bold;
+}
+
+#division {
+    border: 2px solid orange;
+    padding: 10px;
+}
+
+#elemento {
+    color: navy;
+    font-style: oblique;
+}
+
+#lista {
+    background-color: rgb(253, 224, 224);
+    list-style-type: disc;
+}
+
+#item1 {
+    color: purple;
+}
+
+#item2 {
+    color: brown;
+}
+
+#item3 {
+    color: teal;
+}

@@ -1,0 +1,36 @@
+/* Pseudo-clases */
+p:hover {
+    color: blue;
+}
+
+p:focus {
+    outline: 2px solid red;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:active {
+    color: orange;
+}
+
+li:first-child {
+    font-weight: bold;
+}
+
+li:last-child {
+    color: red;
+}
+
+li:nth-child(2) {
+    color: green;
+}
+
+input:checked {
+    border: 2px solid blue;
+}
+
+input:focus {
+    background-color: lightblue;
+}

@@ -1,0 +1,15 @@
+/* Configuración de colores con opacidad (e) */
+/* 1. Fondo de un div con opacidad */
+div.fondo-opacidad {
+    background-color: rgba(255, 0, 0, 0.5); /* Rojo con 50% opacidad */
+}
+
+/* 2. Texto de un párrafo con opacidad */
+p.texto-opacidad {
+    color: rgba(0, 0, 255, 0.75); /* Azul con 75% opacidad */
+}
+
+/* 3. Bordes de un contenedor con opacidad */
+div.borde-opacidad {
+    border: 2px solid rgba(0, 128, 0, 0.3); /* Verde con 30% opacidad */
+}

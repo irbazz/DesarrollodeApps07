@@ -1,0 +1,47 @@
+/* Utilizando porcentajes (%) (b) */
+/* 1. Ancho de un div */
+div.ancho-pct {
+    width: 50%;
+}
+
+/* 2. Tamaño de fuente */
+p.fuente-pct {
+    font-size: 120%;
+}
+
+/* 3. Márgenes */
+div.margen-pct {
+    margin: 10%;
+}
+
+/* Utilizando em */
+/* 1. Tamaño de fuente */
+p.fuente-em {
+    font-size: 1.5em;
+}
+
+/* 2. Padding */
+div.padding-em {
+    padding: 2em;
+}
+
+/* 3. Ancho de un div */
+div.ancho-em {
+    width: 30em;
+}
+
+/* Utilizando rem */
+/* 1. Tamaño de fuente */
+p.fuente-rem {
+    font-size: 2rem;
+}
+
+/* 2. Márgenes */
+div.margen-rem {
+    margin: 1rem;
+}
+
+/* 3. Ancho de un div */
+div.ancho-rem {
+    width: 40rem;
+}

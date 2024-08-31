@@ -1,0 +1,63 @@
+/* Herencia */
+/* 1. Aplica color a todo en <body> */
+body {
+    color: navy;
+}
+
+/* 2. <em> dentro de <p> en <section> */
+section p em {
+    color: rgb(252, 6, 6);
+}
+
+/* 3. Fondo para todo en <div> con clase 'contenedor' */
+div.contenedor * {
+    background-color: rgb(71, 204, 249);
+}
+
+/* 4. Bordes para todo en <nav> */
+nav * {
+    border: 1px solid gray;
+}
+
+/* 5. <strong> en <p> dentro de <article> */
+article p strong {
+    color: rgb(18, 237, 73);
+}
+
+/* 6. Márgenes en <footer> */
+footer * {
+    margin: 10px;
+}
+
+/* 7. Cambia la fuente en <header> */
+header * {
+    font-family: 'Times New Roman', serif;
+}
+
+/* Cascada */
+/* 1. Estilo base para <p> */
+p {
+    color: black;
+    font-size: 16px;
+}
+
+/* 2. Sobrescribe color en <div> con clase 'especial' */
+div.especial p {
+    color: purple;
+}
+
+/* 3. Sobrescribe tamaño de fuente en <section> con ID 'intro' */
+section#intro p {
+    font-size: 18px;
+}
+
+/* 4. Estilo base para <a> */
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+/* 5. Sobrescribe estilo de <a> en <nav> */
+nav a {
+    color: orange;
+}

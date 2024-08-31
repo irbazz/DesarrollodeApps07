@@ -1,0 +1,38 @@
+p::before {
+    content: "Inicio del párrafo: ";
+    font-weight: bold;
+    color: rgb(39, 121, 244);
+}
+
+/*ontenido después de los párrafos */
+p::after {
+    content: " (Fin del párrafo)";
+    font-style: italic;
+    color: red;
+}
+/* para estilizar la primera letra de un párrafo */
+p::first-letter {
+    font-size: 2em;
+    color: rgb(15, 215, 241);
+    font-weight: bold;
+}
+/*para estilizar la primera línea de un párrafo */
+p::first-line {
+    color: darkorange;
+    text-transform: uppercase;
+}
+/*para cambiar el estilo del texto seleccionado */
+::selection {
+    background-color: yellow;
+    color: black;
+}
+/*para estilizar los marcadores de lista */
+li::marker {
+    color: purple;
+    font-size: 1.5em;
+}
+/*para estilizar el texto de un placeholder en un input */
+input::placeholder {
+    color: gray;
+    font-style: italic;
+}

@@ -1,0 +1,79 @@
+/******************************************************
+ARCHIVO     : main.css
+AUTOR       : ANGEL MONTESINOS
+FECHA       : 21/07/2022
+DESCRIPCIÓN : Definición de un archivo CSS con reglas
+*******************************************************/
+
+h1 {
+    color: black;
+    font-size: larger;
+}
+
+h2 {
+    color: brown;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p {
+    color: #000;
+    font-weight: 100;
+    background-color: bisque;
+}
+.Clase h1{
+    color: black;     
+    font-size: larger; 
+}
+#division h1{
+    color: black;     
+    font-size: larger;
+}
+
+[href]{
+    color:#000;
+
+}
+[herf="https://www.ucsm.edu.pe/"]{
+    color:#000;
+    font-style: italic;
+}
+
+a:hover{
+    text-decoration: none;
+    font-size: xx-large;
+}
+input:focus{
+    background-color: blanchedalmond; 
+}
+ul li:nth-child(2) {     
+    color: red; 
+} 
+p::first-letter { 
+    color: #000;    
+     font-size: large;
+} 
+/* Descendientes */
+li a {     
+    text-decoration: none;     
+    color: red; 
+} 
+/* Adyacencia */
+ul + p {
+    color: rgb(17, 17, 17);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Hijos directos */
+div#container > ul {
+    border: 1px solid black;
+}
+
+/* Hermanos */
+h2 ~ p {
+    margin: 10px 0;
+}
+
+/* Múltiples */
+div, p, span, ul {
+    text-decoration: underline;
+}

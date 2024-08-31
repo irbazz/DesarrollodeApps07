@@ -1,0 +1,15 @@
+/* Configuración de colores usando RGB (b) */
+/* 1. Fondo de un div en RGB entero */
+div.fondo-rgb {
+    background-color: rgb(255, 0, 0); /* Rojo */
+}
+
+/* 2. Texto de un párrafo en RGB porcentaje */
+p.texto-rgb {
+    color: rgb(0%, 0%, 100%); /* Azul */
+}
+
+/* 3. Bordes de un contenedor en RGB */
+div.borde-rgb {
+    border: 2px solid rgb(17, 255, 17); /* Verde */
+}

@@ -1,0 +1,47 @@
+/* Utilizando píxeles (px) (a) */
+/* 1. Ancho de un div */
+div.ancho-px {
+    width: 200px;
+}
+
+/* 2. Tamaño de fuente */
+p.fuente-px {
+    font-size: 16px;
+}
+
+/* 3. Espaciado con márgenes */
+h1.margen-px {
+    margin: 20px;
+}
+
+/* Utilizando pulgadas (in) */
+/* 1. Ancho de un div */
+div.ancho-in {
+    width: 2in;
+}
+
+/* 2. Tamaño de imagen */
+img.imagen-in {
+    width: 3in;
+}
+
+/* 3. Espaciado con márgenes */
+div.margen-in {
+    margin: 0.5in;
+}
+
+/* Utilizando centímetros (cm) */
+/* 1. Ancho de un div */
+div.ancho-cm {
+    width: 5cm;
+}
+
+/* 2. Altura de un div */
+div.altura-cm {
+    height: 7cm;
+}
+
+/* 3. Padding en un elemento */
+p.padding-cm {
+    padding: 1cm;
+}

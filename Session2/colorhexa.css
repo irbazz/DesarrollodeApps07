@@ -1,0 +1,15 @@
+/* Configuración de colores usando hexadecimal (c) */
+/* 1. Fondo de un div en hexadecimal */
+div.fondo-hex {
+    background-color: #ff0000; /* Rojo */
+}
+
+/* 2. Texto de un párrafo en hexadecimal */
+p.texto-hex {
+    color: #0000ff; /* Azul */
+}
+
+/* 3. Bordes de un contenedor en hexadecimal */
+div.borde-hex {
+    border: 2px solid #00ff00; /* Verde */
+}

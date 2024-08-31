@@ -1,0 +1,15 @@
+/* Configuración de colores usando nombres (a) */
+/* 1. Fondo de un div en rojo */
+div.fondo-rojo {
+    background-color: red;
+}
+
+/* 2. Texto de un párrafo en azul */
+p.texto-azul {
+    color: blue;
+}
+
+/* 3. Bordes de un contenedor en verde */
+div.borde-verde {
+    border: 2px solid rgb(11, 243, 11);
+}

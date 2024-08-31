@@ -1,0 +1,38 @@
+/* Reglas para los selectores por clase */
+.titulo {
+    color: blue;
+    font-size: 2em;
+}
+
+.subtitulo {
+    color: darkgreen;
+    font-family: 'Arial', sans-serif;
+}
+
+.texto {
+    color: #333;
+    background-color: lightyellow;
+    padding: 10px;
+    font-style: italic;
+}
+
+.contenedor {
+    background-color: lightblue;
+    border: 1px solid #000;
+}
+
+.elemento {
+    color: #000;
+    margin: 5px;
+}
+
+.lista {
+    background-color: lightgray;
+    padding: 10px;
+    list-style-type: square;
+}
+
+.item {
+    color: red;
+    font-weight: bold;
+}

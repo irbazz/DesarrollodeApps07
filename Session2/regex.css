@@ -1,0 +1,25 @@
+/* Selectores Regex b */
+/* 1. Links que empiezan con "https" */
+a[href^="https"] {
+    color: green;
+}
+
+/* 2. Links que terminan en ".pdf" */
+a[href$=".pdf"] {
+    color: red;
+}
+
+/* 3. Inputs que contienen "user" en el name */
+input[name*="user"] {
+    border: 2px solid blue;
+}
+
+/* 4. Inputs de tipo "text" */
+input[type="text"] {
+    background-color: lightyellow;
+}
+
+/* 5. Clase que incluye "active" */
+[class*="active"] {
+    font-weight: bold;
+}
