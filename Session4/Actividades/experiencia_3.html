@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .result {
+            background-color: #eaf8e8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .error {
+            background-color: #f8d7da;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Ejecutando funciones de JavaScript</h1>
+    <p>Los resultados se mostrarán a continuación:</p>
+    
+    <div id="result-foo" class="result"></div>
+    <div id="result-greeting" class="result"></div>
+    <div id="result-closure" class="result"></div>
+    <div id="result-scope" class="result"></div>
+    <div id="result-exception" class="result"></div>
+</div>
+
+<script>
+    // a) CIUDADANO DE PRIMERA CLASE
+
+    // 1. Función anónima con variable foo
+    const foo = () => {
+      return "foobar";
+    }
+    document.getElementById("result-foo").textContent = "Resultado de foo(): " + foo(); // Imprime: foobar
+
+    // 2. Función sayHello y greeting
+    function sayHello() {
+      return "Hello, ";
+    }
+
+    function greeting(helloMessage, name) {
+      return helloMessage() + name;
+    }
+
+    document.getElementById("result-greeting").textContent = "Resultado de greeting(): " + greeting(sayHello, "JavaScript!"); // Imprime: Hello, JavaScript!
+
+    // b) CLOSURE
+
+    function makeFunc() {
+      const name = 'Mozilla';
+      function displayName() {
+        return name;
+      }
+      return displayName;
+    }
+
+    const myFunc = makeFunc();
+    document.getElementById("result-closure").textContent = "Resultado de closure: " + myFunc(); // Imprime: Mozilla
+
+
+    // c) ÁMBITO DE FUNCIÓN
+    const globalX = "función externa declarada";
+
+    function exampleGlobalFunction() {
+      return globalX; // Imprime: declared outside function
+    }
+
+    document.getElementById("result-scope").textContent = "Resultado de ámbito global: " + exampleGlobalFunction(); // Imprime: declared outside function
+
+    // d) MANEJO DE EXCEPCIONES
+
+    function UserException(message) {
+      this.message = message;
+      this.name = 'UserException';
+    }
+
+    function getMonthName(mo) {
+      mo--; // Ajusta el número de mes para el índice del array
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      if (months[mo] !== undefined) {
+        return months[mo];
+      } else {
+        throw new UserException('InvalidMonthNo');
+      }
+    }
+
+    let monthName;
+    try {
+      const myMonth = 15; // 15 está fuera de los límites, lanza la excepción
+      monthName = getMonthName(myMonth);
+    } catch (e) {
+      monthName = 'unknown';
+      document.getElementById("result-exception").innerHTML = `<span class="error">Error: ${e.message}, Tipo: ${e.name}</span>`;
+    }
+
+    document.getElementById("result-exception").innerHTML += `<div>Resultado de monthName: ${monthName}</div>`; // Imprime: unknown
+</script>
+
+</body>
+</html>

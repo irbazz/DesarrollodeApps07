@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento con Funciones en JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Título de la página Web</h1>
+    <h2>Subtítulo de la página</h2>
+
+    <!-- Ejemplo de clase -->
+    <p class="parrafo" style="color: blue;">Hola Mundo!!</p>
+
+    <!-- Ejemplo de ID -->
+    <div id="division">
+        <p>Elemento subordinado</p>
+    </div>
+
+    <!-- Ejemplo de selector por atributo -->
+    <div>
+        <a href="http://www.ucsm.edu.pe">UCSM</a>
+        <br>
+        <a href="http://www.mininter.gob.pe">Ministerio del Interior</a>
+        <br>
+        <a href="http://www.udemy.com">Udemy</a>
+        <br>
+    </div>
+
+    <!-- Ejemplo de lista -->
+    <ul>
+        <li>Primer elemento</li>
+        <li>Segundo elemento</li>
+        <li>Tercer elemento</li>
+    </ul>
+
+    <p>Texto adyacente a la lista</p>
+
+    <!-- Ejemplo de hermano -->
+    <h2>Otro título</h2>
+    <p>Parrafo hermano de h2</p>
+
+    <!-- Implementación de las funciones de la práctica -->
+    <h2>Implementación de Funciones en JavaScript</h2>
+
+    <script>
+        // a) Ciudadano de Primera Clase
+        document.write("<h3>Ciudadano de Primera Clase</h3>");
+
+        // 1. Definir una función como ciudadano de primera clase
+        const foo = () => {
+            document.write("foobar<br>");
+            console.log("foobar");
+        };
+        foo(); // Invocación usando la variable
+
+        // 5. Pasando una función como argumento
+        function sayHello() {
+            return "Hello, ";
+        }
+
+        function greeting(helloMessage, name) {
+            const message = helloMessage() + name;
+            document.write(message + "<br>");
+            console.log(message);
+        }
+
+        greeting(sayHello, "JavaScript!"); // Hello, JavaScript!
+
+        // 9. Retornando una función
+        function sayHello2() {
+            return () => {
+                document.write("Hello!<br>");
+                console.log("Hello!");
+            };
+        }
+
+        const helloFunction = sayHello2();
+        helloFunction(); // Hello!
+
+        // b) Closure
+        document.write("<h3>Closure</h3>");
+        function makeFunc() {
+            const name = "Mozilla";
+            function displayName() {
+                document.write("Closure: " + name + "<br>");
+                console.log(name);
+            }
+            return displayName;
+        }
+
+        const myFunc = makeFunc();
+        myFunc(); // Mozilla
+
+        // c) Ámbito de Función
+        document.write("<h3>Ámbito de Función</h3>");
+        // 1. Ejemplo de ámbito local
+        function exampleFunction() {
+            const x = "declarada dentro de la función"; // Alcance local
+            document.write("Dentro de la función: " + x + "<br>");
+            console.log("Dentro de la función");
+            console.log(x); // Salida: declarada dentro de la función
+        }
+
+        exampleFunction();
+
+        // 4. Ejemplo de ámbito global y local
+        const y = "declarada fuera de la función"; // Alcance global
+
+        function exampleFunction2() {
+            document.write("Dentro de la función, accediendo a y: " + y + "<br>");
+            console.log("Dentro de la función");
+            console.log(y); // Accede a la variable global
+        }
+
+        exampleFunction2();
+        document.write("Fuera de la función, accediendo a y: " + y + "<br>");
+        console.log("Fuera de la función");
+        console.log(y); // Salida: declarada fuera de la función
+
+        // 7. Ejemplo con try-catch-finally
+        document.write("<h3>Ejemplo con Try-Catch-Finally</h3>");
+        function f() {
+            try {
+                document.write("0<br>");
+                console.log(0);
+                throw 'bogus';
+            } catch (e) {
+                document.write("1<br>");
+                console.log(1);
+                return true; // Este return se suspende hasta que el bloque finally se complete
+            } finally {
+                document.write("3<br>");
+                console.log(3);
+                return false; // Sobrescribe el return anterior
+            }
+        }
+        const result = f(); // Salida: 0, 1, 3, false
+        document.write("Resultado de f(): " + result + "<br>");
+        console.log(result);
+
+        // d) Manejo de Excepciones
+        document.write("<h3>Manejo de Excepciones</h3>");
+        function UserException(message) {
+            this.message = message;
+            this.name = 'UserException';
+        }
+
+        function getMonthName(mo) {
+            mo--; // Ajustar el número del mes para el índice del array
+            const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+            if (months[mo] !== undefined) {
+                return months[mo];
+            } else {
+                throw new UserException('InvalidMonthNo');
+            }
+        }
+
+        let monthName;
+        try {
+            const myMonth = 15; // 15 está fuera del límite para generar una excepción
+            monthName = getMonthName(myMonth);
+        } catch (e) {
+            monthName = 'unknown';
+            document.write("Excepción capturada: " + e.message + "<br>");
+            console.error(e.message, e.name); // Manejar la excepción
+        }
+
+        document.write("Nombre del mes: " + monthName + "<br>"); // Mostrar el resultado
+    </script>
+</body>
+</html>

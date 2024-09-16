@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de Objetos en JavaScript</title>
+</head>
+<body>
+    <h1>Práctica: Uso de Objetos en JavaScript</h1>
+
+    <script>
+        document.write("<h2>Creación de Objetos</h2>");
+
+        // a) 1. Crear objeto utilizando iniciadores de objetos (object literal)
+        const personaLiteral = {
+            nombre: "Juan",
+            edad: 30,
+            saludar: function() {
+                return "Hola, mi nombre es " + this.nombre;
+            }
+        };
+        
+        document.write("Objeto Literal: " + personaLiteral.saludar() + "<br>");
+        console.log(personaLiteral);
+
+        // a) 2. Crear objeto utilizando un método constructor
+        function PersonaConstructor(nombre, edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.saludar = function() {
+                return "Hola, mi nombre es " + this.nombre;
+            };
+        }
+
+        const personaConstructor = new PersonaConstructor("Ana", 25);
+        document.write("Objeto con Constructor: " + personaConstructor.saludar() + "<br>");
+        console.log(personaConstructor);
+
+        // a) 3. Crear objeto utilizando Object.create()
+        const prototipoPersona = {
+            saludar: function() {
+                return "Hola, mi nombre es " + this.nombre;
+            }
+        };
+
+        const personaCreate = Object.create(prototipoPersona);
+        personaCreate.nombre = "Luis";
+        personaCreate.edad = 40;
+
+        document.write("Objeto con Object.create(): " + personaCreate.saludar() + "<br>");
+        console.log(personaCreate);
+
+        // b) Agregando propiedades a los objetos
+
+        document.write("<h2>Agregando Propiedades a los Objetos</h2>");
+
+        // b) 1. Agregar propiedades usando iniciadores de objetos
+        personaLiteral.direccion = "Calle 123";
+        personaLiteral.telefono = "987654321";
+        document.write("Objeto Literal actualizado: " + personaLiteral.nombre + ", Dirección: " + personaLiteral.direccion + "<br>");
+        console.log(personaLiteral);
+
+        // b) 2. Agregar propiedades a objeto creado con constructor
+        personaConstructor.direccion = "Avenida Principal 456";
+        personaConstructor.telefono = "123456789";
+        document.write("Objeto con Constructor actualizado: " + personaConstructor.nombre + ", Dirección: " + personaConstructor.direccion + "<br>");
+        console.log(personaConstructor);
+
+        // b) 3. Agregar propiedades a objeto creado con Object.create()
+        personaCreate.direccion = "Boulevard 789";
+        personaCreate.telefono = "456789123";
+        document.write("Objeto con Object.create() actualizado: " + personaCreate.nombre + ", Dirección: " + personaCreate.direccion + "<br>");
+        console.log(personaCreate);
+
+    </script>
+</body>
+</html>

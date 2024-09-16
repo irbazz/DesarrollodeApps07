@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de Arrays en JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .result {
+            background-color: #eaf8e8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: none;
+        }
+        .action-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .action-btn:hover {
+            background-color: #218838;
+        }
+        input[type="text"], input[type="number"] {
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: calc(100% - 20px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Uso de Arrays en JavaScript</h1>
+
+    <!-- Creación de Arrays -->
+    <div class="section">
+        <h2>Creación de Arrays</h2>
+        <button class="action-btn" onclick="crearArrays()">Mostrar/Ocultar Resultados</button>
+        <div id="result-creation" class="result"></div>
+    </div>
+
+    <!-- Ingreso de datos en Arrays -->
+    <div class="section">
+        <h2>Ingreso de Datos en Arrays</h2>
+        <div>
+            <h3>Array Numérico:</h3>
+            <input type="number" id="numericInput" placeholder="Ingresa un número">
+            <button class="action-btn" onclick="ingresarNumero()">Agregar Número</button>
+        </div>
+        <div>
+            <h3>Array de Strings:</h3>
+            <input type="text" id="stringInput" placeholder="Ingresa una palabra">
+            <button class="action-btn" onclick="ingresarString()">Agregar String</button>
+        </div>
+        <div>
+            <h3>Array de Objetos:</h3>
+            <input type="text" id="objNameInput" placeholder="Nombre del objeto">
+            <input type="number" id="objAgeInput" placeholder="Edad del objeto">
+            <button class="action-btn" onclick="ingresarObjeto()">Agregar Objeto</button>
+        </div>
+        <div id="result-ingreso" class="result"></div>
+    </div>
+
+    <!-- Manipulación de Arrays -->
+    <div class="section">
+        <h2>Manipulación de Arrays</h2>
+        <button class="action-btn" onclick="manipularArrays()">Manipular Arrays</button>
+        <div id="result-manipulacion" class="result"></div>
+    </div>
+
+    <!-- Iteradores en Arrays -->
+    <div class="section">
+        <h2>Iteradores en Arrays</h2>
+        <button class="action-btn" onclick="iterarArrays()">Iterar Arrays</button>
+        <div id="result-iteracion" class="result"></div>
+    </div>
+
+</div>
+
+<script>
+    let arrayNumerico = [];
+    let arrayStrings = [];
+    let arrayObjetos = [];
+
+    // 1. Crear Arrays con diferentes métodos
+    function crearArrays() {
+        // a) Usar Array literal
+        arrayNumerico = [2,0, 6, 7, 5];
+
+        // b) Usar el constructor Array
+        arrayStrings = new Array("manzana", "palta", "naranja");
+
+        // c) Usar el método Array.of()
+        arrayObjetos = Array.of({ nombre: "Pedro", edad: 20 }, { nombre: "Camila", edad: 21 });
+
+        document.getElementById("result-creation").style.display = "block";
+        document.getElementById("result-creation").innerHTML = `
+            <strong>Array Numérico:</strong> ${arrayNumerico} <br>
+            <strong>Array de Strings:</strong> ${arrayStrings} <br>
+            <strong>Array de Objetos:</strong> ${JSON.stringify(arrayObjetos)}
+        `;
+    }
+
+    // 2. Ingresar datos a los arrays
+    function ingresarNumero() {
+        const numero = document.getElementById("numericInput").value;
+        if (numero) {
+            arrayNumerico.push(Number(numero));
+            actualizarResultadoIngreso();
+        }
+    }
+
+    function ingresarString() {
+        const palabra = document.getElementById("stringInput").value;
+        if (palabra) {
+            arrayStrings.push(palabra);
+            actualizarResultadoIngreso();
+        }
+    }
+
+    function ingresarObjeto() {
+        const nombre = document.getElementById("objNameInput").value;
+        const edad = document.getElementById("objAgeInput").value;
+        if (nombre && edad) {
+            arrayObjetos.push({ nombre, edad: Number(edad) });
+            actualizarResultadoIngreso();
+        }
+    }
+
+    // Función para actualizar los resultados tras el ingreso de datos
+    function actualizarResultadoIngreso() {
+        document.getElementById("result-ingreso").style.display = "block";
+        document.getElementById("result-ingreso").innerHTML = `
+            <strong>Array Numérico:</strong> ${arrayNumerico} <br>
+            <strong>Array de Strings:</strong> ${arrayStrings} <br>
+            <strong>Array de Objetos:</strong> ${JSON.stringify(arrayObjetos)}
+        `;
+    }
+
+    // 3. Manipulación de Arrays
+    function manipularArrays() {
+        // Ejemplo simple de manipulación
+        const sumaNumeros = arrayNumerico.reduce((acc, val) => acc + val, 0);
+        const stringsEnMayusculas = arrayStrings.map(str => str.toUpperCase());
+        const nombresObjetos = arrayObjetos.map(obj => obj.nombre);
+
+        document.getElementById("result-manipulacion").style.display = "block";
+        document.getElementById("result-manipulacion").innerHTML = `
+            <strong>Suma de Números:</strong> ${sumaNumeros} <br>
+            <strong>Strings en Mayúsculas:</strong> ${stringsEnMayusculas} <br>
+            <strong>Nombres de Objetos:</strong> ${nombresObjetos}
+        `;
+    }
+
+    // 4. Iteradores en Arrays
+    function iterarArrays() {
+        let resultadoNumeros = "";
+        arrayNumerico.forEach(num => {
+            resultadoNumeros += `Número: ${num} <br>`;
+        });
+
+        let resultadoStrings = "";
+        arrayStrings.forEach(str => {
+            resultadoStrings += `Palabra: ${str} <br>`;
+        });
+
+        let resultadoObjetos = "";
+        arrayObjetos.forEach(obj => {
+            resultadoObjetos += `Objeto - Nombre: ${obj.nombre}, Edad: ${obj.edad} <br>`;
+        });
+
+        document.getElementById("result-iteracion").style.display = "block";
+        document.getElementById("result-iteracion").innerHTML = `
+            <strong>Iteración sobre Números:</strong> <br> ${resultadoNumeros} <br>
+            <strong>Iteración sobre Strings:</strong> <br> ${resultadoStrings} <br>
+            <strong>Iteración sobre Objetos:</strong> <br> ${resultadoObjetos}
+        `;
+    }
+</script>
+
+</body>
+</html>

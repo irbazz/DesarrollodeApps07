@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de Objetos en JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .result {
+            background-color: #eaf8e8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: none; /* Ocultar los resultados inicialmente */
+        }
+        .action-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .action-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Manejo de Objetos en JavaScript</h1>
+
+    <!-- Creación de objetos -->
+    <div class="section">
+        <h2>Creación de Objetos</h2>
+        <button class="action-btn" onclick="toggleDisplay('result-creation', crearObjetos)">Mostrar Resultados</button>
+        <div id="result-creation" class="result"></div>
+    </div>
+
+    <!-- Propiedades de objetos -->
+    <div class="section">
+        <h2>Agregar Propiedades a los Objetos</h2>
+        <button class="action-btn" onclick="toggleDisplay('result-properties', agregarPropiedades)">Mostrar Resultados</button>
+        <div id="result-properties" class="result"></div>
+    </div>
+
+    <!-- Métodos Avanzados -->
+    <div class="section">
+        <h2>Métodos Avanzados</h2>
+        <button class="action-btn" onclick="toggleDisplay('result-methods', mostrarMetodos)">Mostrar Resultados</button>
+        <div id="result-methods" class="result"></div>
+    </div>
+
+</div>
+
+<script>
+    let personaLiteral, personaConstructor, personaCreate;
+
+    // Función para mostrar u ocultar secciones
+    function toggleDisplay(elementId, callback) {
+        const element = document.getElementById(elementId);
+        if (element.style.display === "none") {
+            callback(); // Ejecuta la función para generar contenido
+            element.style.display = "block"; // Muestra el contenido
+        } else {
+            element.style.display = "none"; // Oculta el contenido
+        }
+    }
+
+    // 1. Creación de objetos usando diferentes enfoques
+    function crearObjetos() {
+        // a) Literal Object
+        personaLiteral = {
+            nombre: "Fernando",
+            edad: 28,
+            saludar() {
+                return `Hola, soy ${this.nombre}, tengo ${this.edad} años.`;
+            }
+        };
+
+        // b) Constructor Function
+        function Persona(nombre, edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+        }
+        Persona.prototype.saludar = function() {
+            return `Hola, soy ${this.nombre}, tengo ${this.edad} años.`;
+        };
+        personaConstructor = new Persona("Ana", 22);
+
+        // c) Object.create()
+        const protoPersona = {
+            saludar() {
+                return `Hola, soy ${this.nombre}, tengo ${this.edad} años.`;
+            }
+        };
+        personaCreate = Object.create(protoPersona);
+        personaCreate.nombre = "Carlos";
+        personaCreate.edad = 25;
+
+        // Mostrar resultados en la página
+        document.getElementById("result-creation").innerHTML = `
+            <strong>Objeto Literal:</strong> ${personaLiteral.saludar()} <br>
+            <strong>Objeto Constructor:</strong> ${personaConstructor.saludar()} <br>
+            <strong>Object.create():</strong> ${personaCreate.saludar()}
+        `;
+    }
+
+    // 2. Agregar propiedades dinámicas a los objetos
+    function agregarPropiedades() {
+        // Agregar nuevas propiedades a los objetos creados
+        personaLiteral.apellido = "Pérez";
+        personaConstructor.apellido = "Sánchez";
+        personaCreate.apellido = "García";
+
+        document.getElementById("result-properties").innerHTML = `
+            <strong>Objeto Literal:</strong> Apellido: ${personaLiteral.apellido} <br>
+            <strong>Objeto Constructor:</strong> Apellido: ${personaConstructor.apellido} <br>
+            <strong>Object.create():</strong> Apellido: ${personaCreate.apellido}
+        `;
+    }
+
+    // 3. Métodos avanzados
+    function mostrarMetodos() {
+        // Sobrescribir método saludar en uno de los objetos
+        personaConstructor.saludar = function() {
+            return `Hola, soy ${this.nombre} ${this.apellido}, tengo ${this.edad} años. ¡Encantado de conocerte!`;
+        };
+
+        // Añadir un nuevo método dinámicamente a personaCreate
+        personaCreate.trabajar = function() {
+            return `Soy ${this.nombre} ${this.apellido} y trabajo como desarrollador.`;
+        };
+
+        // Mostrar resultados avanzados
+        document.getElementById("result-methods").innerHTML = `
+            <strong>Objeto Constructor con método sobrescrito:</strong> ${personaConstructor.saludar()} <br>
+            <strong>Object.create() con nuevo método:</strong> ${personaCreate.trabajar()}
+        `;
+    }
+</script>
+
+</body>
+</html>

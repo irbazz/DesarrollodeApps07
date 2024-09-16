@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevación de Variables</title>
+</head>
+<body>
+    <h1>Demostración de Hoisting</h1>
+
+    <script>
+        // Hoisting de la variable
+        console.log(x === undefined); // true, x es "elevada" pero su valor aún no está asignado
+        var x = 3;
+
+       
+        var myvar = "mi valor";
+        (function() {
+            console.log(myvar); 
+            var myvar = "valor local";
+        })();
+    </script>
+</body>
+</html>
+
+<!-- las declaraciones de variables y funciones son procesadas antes de la ejecucion del codigo. 
+    las vasriables declaradas con var se elevan al principio de su contexto de ejecucion, pero el valor inicial no se eleva. 
+-->
+    

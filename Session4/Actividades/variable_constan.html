@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de Variables y Constantes</title>
+</head>
+<body>
+    <h1>Uso de Variables y Constantes</h1>
+    
+    <script>
+        // Crear un bloque de código con llaves {}
+        {
+            // Declarar una variable con ámbito de bloque
+            let variableBloque = "Soy una variable con ámbito de bloque";
+            
+            // Declarar una constante con ámbito de bloque
+            const constanteBloque = "Soy una constante con ámbito de bloque";
+
+            // Mostrar los valores dentro del bloque
+            console.log(variableBloque); // Salida: Soy una variable con ámbito de bloque
+            console.log(constanteBloque); // Salida: Soy una constante con ámbito de bloque
+        }
+
+        // Intentar acceder a las variables fuera del bloque
+        console.log(typeof variableBloque); // Salida: undefined
+        console.log(typeof constanteBloque); // Salida: undefined
+    </script>
+</body>
+</html>
