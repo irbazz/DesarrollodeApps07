@@ -1,0 +1,42 @@
+/* Estilos para MasComponentes */
+.contenido {
+    color:rgb(34, 140, 156);
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+  }
+/* Estilos para la lista */
+.lista {
+    text-align: left; 
+    padding-left: 20px; 
+  }
+  
+.lista li {
+    padding: 5px 0; 
+    color: rgb(0, 132, 139);
+  }
+/* Estilos para el botón y el mensaje */
+.mensaje-boton {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+.mensaje-boton button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: rgb(255, 244, 244);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 30px;
+  }
+  
+.mensaje-boton button:hover {
+    background-color: #8b8181;
+  }
+  
+.mensaje-boton p {
+    font-size: 15px;
+    color: rgb(0, 119, 255);
+    padding: 10px;
+  }
